@@ -1,0 +1,1081 @@
+@font-face {
+  font-family: Lato;
+  src: url("../fonts/lato/Lato-Regular.ttf");
+}
+
+@font-face {
+  font-family: LatoBlack;
+  src: url("../fonts/lato/Lato-Black.ttf");
+}
+
+@font-face {
+  font-family: LatoBold;
+  src: url("../fonts/lato/Lato-Bold.ttf");
+}
+
+:root {
+  /** Colors **/
+  --primary-color: #bf9967;
+  --secondary-color: rgb(248, 234, 214);
+  --default-color: rgb(243, 241, 239);
+  --box-shadow: 1px 1px 2.5px grey;
+  /**=========== Fonts ==========**/
+  --Lato: Lato;
+  --LatoBold: LatoBold;
+  --LatoBlack: LatoBlack;
+  /** Transitions **/
+  --transition: all 0.5s ease-in-out;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-family: Lato;
+  border: none;
+  outline: none;
+}
+
+body:focus {
+  border: none;
+  outline: none;
+}
+
+h4 {
+  font-family: LatoBold;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+p {
+  font-size: 24px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  font-family: Lato;
+  font-size: 14px;
+}
+
+input, textarea, select {
+  font-family: Lato;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 2% 0;
+  background: #f8ead6;
+  overflow: hidden;
+}
+
+.container {
+  width: 70%;
+  margin: 0 15%;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+.btn {
+  width: 100px;
+  padding: 7px 10px;
+  border: none;
+  outline: none;
+  background: #d1a975;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  width: 100%;
+  padding: 10px;
+  background: #f3f1ef;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn-secondary:hover {
+  background: #fff;
+}
+
+.form-item {
+  width: 100%;
+  float: left;
+  padding: 15px;
+  background: #fafafa;
+  border: none;
+  outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.form-item-container {
+  width: 100%;
+  float: left;
+  margin-bottom: 20px;
+}
+
+.form-item-container label {
+  padding: 0;
+  font-size: 12px;
+}
+
+.form-btn {
+  width: 100%;
+  background-color: var(--primary-color);
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.nav {
+  width: 100%;
+  float: left;
+  padding: 2% 0;
+}
+
+.nav .nav-brand {
+  width: 20%;
+  float: left;
+}
+
+.nav .nav-bar {
+  width: 80%;
+  float: left;
+  color: black;
+}
+
+.nav .nav-bar .nav-bar-menu {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.nav .nav-bar .nav-bar-menu .nav-bar-menu-item {
+  width: 10%;
+  margin: 0 10px;
+  padding: 0 2%;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.nav .nav-bar .nav-bar-menu .nav-bar-menu-item.nav-bar-menu-btn {
+  width: 100px;
+  padding: 7px 10px;
+  text-align: center;
+  background: #d1a975;
+}
+
+.content {
+  padding: 10% 5%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.content .content-body {
+  margin-top: 5%;
+  text-align: center;
+}
+
+.content .content-body h1 {
+  margin-bottom: 20px;
+}
+
+.content .content-body p {
+  margin-bottom: 20px;
+}
+
+.content .content-body .content-body-cta {
+  margin: 10px 0;
+}
+
+.content .content-body .content-body-cta .btn {
+  margin: 10px;
+}
+
+.content .content-footer {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 10%;
+  padding: 0 17%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.content .content-footer .content-footer-item {
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+  border-radius: 10%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: var(--primary-color);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.content .content-footer .content-footer-item:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.content .content-footer .content-footer-item :last-child {
+  margin-left: 0;
+}
+
+.content .content-footer .content-footer-item i {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.content-dashboard {
+  position: relative;
+  float: left;
+  width: 100%;
+  padding: 30px 0px;
+}
+
+.content-dashboard .content-dashboard-header h1 {
+  font-size: 32px;
+}
+
+.content-dashboard .content-dashboard-body {
+  margin: 30px 0;
+}
+
+.tasks .tasks-action {
+  width: 100%;
+}
+
+.tasks .tasks-action .tasks-action-new {
+  float: left;
+}
+
+.tasks .tasks-action .tasks-action-new button {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: #fff;
+  background: var(--primary-color);
+  color: #000;
+  font-family: Lato;
+  border: var(--primary-color);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.tasks .tasks-action .tasks-action-new button i {
+  font-size: 24px;
+  float: left;
+}
+
+.tasks .tasks-action .tasks-action-new button p {
+  font-size: 20px;
+  float: left;
+  margin-left: 10px;
+}
+
+.tasks .tasks-action .tasks-action-new button:hover {
+  background: #fff;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.tasks .tasks-tables {
+  width: 100%;
+  float: left;
+  padding: 30px 40px;
+  border-radius: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid var(--primary-color);
+  margin-top: 20px;
+}
+
+.tasks .tasks-tables .tasks-table {
+  float: left;
+}
+
+.tasks .tasks-tables .tasks-table .tasks-table-header i {
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: #f3f1ef;
+  font-size: 20px;
+  float: left;
+}
+
+.tasks .tasks-tables .tasks-table .tasks-table-header h4 {
+  margin-left: 10px;
+  font-size: 18px;
+  padding-top: 10px;
+  float: left;
+  font-family: LatoBlack;
+}
+
+.tasks .tasks-tables .tasks-table .tasks-table-header a {
+  padding-top: 16px;
+  float: right;
+  font-size: 12px;
+}
+
+.tasks .tasks-tables .tasks-table .tasks-table-body {
+  width: 100%;
+  float: left;
+  background: #f3f1ef;
+  padding: 10px 20px;
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 10px;
+}
+
+.tasks .tasks-tables .tasks-table .tasks-table-body .single-task {
+  width: 100%;
+  float: left;
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 1px 2.5px grey;
+          box-shadow: 1px 1px 2.5px grey;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-left: 3px solid red;
+  background: #fff;
+  margin: 10px 0;
+}
+
+.tasks .tasks-tables .tasks-table .tasks-table-body .single-task .single-task-top {
+  float: left;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.tasks .tasks-tables .tasks-table .tasks-table-body .single-task .single-task-top h4 {
+  float: left;
+  vertical-align: center;
+}
+
+.tasks .tasks-tables .tasks-table .tasks-table-body .single-task .single-task-top h4 small {
+  font-size: 12px;
+  float: left;
+  color: red;
+  font-family: LatoBold;
+}
+
+.tasks .tasks-tables .tasks-table .tasks-table-body .single-task .single-task-top h4 small span {
+  color: black;
+}
+
+.tasks .tasks-tables .tasks-table .tasks-table-body .single-task .single-task-top .action-btns ul {
+  border-radius: 5px;
+  float: right;
+}
+
+.tasks .tasks-tables .tasks-table .tasks-table-body .single-task .single-task-top .action-btns ul li {
+  padding: 3px 7px;
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  float: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tasks .tasks-tables .tasks-table .tasks-table-body .single-task .single-task-top .action-btns ul li:hover {
+  background: #f3f1ef;
+}
+
+.tasks .tasks-tables .tasks-table .tasks-table-body .single-task .single-task-top .action-btns ul li a i {
+  font-size: 5px;
+}
+
+.tasks .tasks-tables .tasks-table .tasks-table-body .single-task .single-task-body {
+  float: left;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.tasks .tasks-tables .tasks-table .tasks-table-body .single-task .single-task-body p {
+  font-size: 14px;
+}
+
+.tasks .tasks-tables .tasks-table .tasks-table-body .single-task .single-task-bottom {
+  width: 100%;
+  float: left;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.tasks .tasks-tables .tasks-table .tasks-table-body .single-task .single-task-bottom .task-due-date {
+  font-size: 12px;
+  background: #f8ead6;
+  padding: 5px;
+  border-radius: 3px;
+  float: left;
+}
+
+.tasks .tasks-tables .tasks-table .tasks-table-body .single-task .single-task-bottom .task-due-date i {
+  font-size: 14px;
+  margin-right: 4px;
+}
+
+.tasks .tasks-tables .tasks-table .tasks-table-body .single-task .single-task-bottom .update-task-status {
+  font-size: 12px;
+  float: right;
+}
+
+.tasks .tasks-tables .tasks-table .tasks-table-body .single-task .single-task-bottom .update-task-status button {
+  font-size: 13px;
+  font-family: LatoBold;
+  padding: 5px;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.tasks .tasks-tables .tasks-table .tasks-table-body .single-task .single-task-bottom .update-task-status button.completed {
+  background-color: green;
+  color: #fff;
+  cursor: default;
+}
+
+.tasks .tasks-tables .tasks-table.tasks-table-pending {
+  width: 57%;
+  margin-right: 3%;
+}
+
+.tasks .tasks-tables .tasks-table.tasks-table-recent {
+  width: 40%;
+}
+
+.new-task-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.302);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  z-index: 1;
+}
+
+.new-task-modal .new-task {
+  float: left;
+  background: #f3f1ef;
+  padding: 50px 5%;
+  border-radius: 5px;
+  -webkit-box-sizing: 4px 5px 4px #000;
+          box-sizing: 4px 5px 4px #000;
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-bottom: 20px;
+  -webkit-animation-name: NewTaskModal;
+          animation-name: NewTaskModal;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.new-task-modal .new-task .new-task-header {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.new-task-modal .new-task .new-task-header h2 {
+  font-family: LatoBlack;
+  float: left;
+  font-size: 24px;
+}
+
+.new-task-modal .new-task .new-task-header a {
+  float: right;
+  padding-top: 18px;
+  font-size: 12px;
+  color: var(--primary-color);
+}
+
+.new-task-modal .new-task .new-task-form {
+  margin-top: 10px;
+  padding: 0;
+  width: 100%;
+  float: left;
+  position: relative;
+}
+
+.new-task-modal .new-task .new-task-form form {
+  width: 100%;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.new-task-modal .new-task .new-task-form form .task-title {
+  width: 55%;
+  height: 30px;
+  padding: 10px;
+  background: #fff;
+  border: none;
+  outline: none;
+  float: left;
+  margin-right: 2.2%;
+}
+
+.new-task-modal .new-task .new-task-form form .task-title:focus {
+  border: 1px solid var(--primary-color);
+}
+
+.new-task-modal .new-task .new-task-form form .task-category {
+  width: 40%;
+  height: 50px;
+  background: #fff;
+  border: none;
+  outline: none;
+  padding: 0 10px;
+  float: left;
+}
+
+.new-task-modal .new-task .new-task-form form .task-category:focus {
+  border: 1px solid var(--primary-color);
+}
+
+.new-task-modal .new-task .new-task-form form .task-notes {
+  width: 100%;
+  background: #fff;
+  margin-top: 20px;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  resize: none;
+  border: none;
+  outline: none;
+}
+
+.new-task-modal .new-task .new-task-form form .task-notes:focus {
+  border: 1px solid var(--primary-color);
+}
+
+.new-task-modal .new-task .new-task-form form .task-date {
+  width: 55%;
+  margin-top: 20px;
+  height: 30px;
+  padding: 10px;
+  background: #fff;
+  border: none;
+  outline: none;
+  float: left;
+  margin-right: 2.2%;
+}
+
+.new-task-modal .new-task .new-task-form form .task-date:focus {
+  border: 1px solid var(--primary-color);
+}
+
+.new-task-modal .new-task .new-task-form form button {
+  width: 40%;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.new-task-modal .new-task .new-task-close {
+  float: left;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.progress-bar {
+  height: 5px;
+  width: 100%;
+  position: relative;
+  background: grey;
+  border-radius: 10px;
+  float: left;
+}
+
+.progress-bar .progress {
+  width: 70%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 10px;
+}
+
+.progress-bar .progress.completed {
+  width: 100%;
+  background: green;
+}
+
+.progress-bar .progress.in-progress {
+  background: orange;
+}
+
+.more-icon {
+  position: relative;
+}
+
+.more-icon:hover .more-icon-modal {
+  display: block;
+}
+
+.more-icon .more-icon-modal {
+  display: none;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 100px;
+  background: white;
+  z-index: 1;
+  -webkit-box-shadow: 1px 1px 2.5px grey;
+          box-shadow: 1px 1px 2.5px grey;
+  border-radius: 5px;
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+}
+
+.more-icon .more-icon-modal ul {
+  border-radius: 5px;
+}
+
+.more-icon .more-icon-modal ul li {
+  width: 50%;
+  font-size: 15px;
+  padding: 10px 20px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  float: left;
+  font-family: Lato;
+}
+
+.more-icon .more-icon-modal ul li i {
+  font-style: normal;
+}
+
+.more-icon .more-icon-modal ul li:hover {
+  background: #f3f1ef;
+  -webkit-transition: all 2s ease-out;
+  transition: all 2s ease-out;
+}
+
+.modal-wrapper {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 111;
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.modal-wrapper .new-category-form {
+  display: none;
+  width: 300px;
+  height: auto;
+  padding: 20px 10px;
+  -webkit-box-shadow: 1px 1px 2.5px grey;
+          box-shadow: 1px 1px 2.5px grey;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #fff;
+  border-radius: 5px;
+  -webkit-animation-name: NewTaskModal;
+          animation-name: NewTaskModal;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.modal-wrapper .new-category-form form {
+  margin-top: 15px;
+}
+
+.modal-wrapper .new-category-form form input {
+  height: 30px;
+  background: #fafafa;
+  border: none;
+  outline: none;
+  float: left;
+  margin-bottom: 10px;
+}
+
+.modal-wrapper .new-category-form form input:first-child:focus {
+  border: 1px solid var(--primary-color);
+}
+
+.modal-wrapper .new-category-form form input.category-name {
+  width: 70%;
+  padding: 20px 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  float: left;
+}
+
+.modal-wrapper .new-category-form form input.category-color {
+  width: 25%;
+  float: left;
+  margin-left: 5%;
+  padding: 0;
+  height: 40px;
+}
+
+.modal-wrapper .new-category-form form .create-category-btn {
+  width: 100%;
+  padding: 10px;
+  background: var(--primary-color);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+.modal-wrapper .task-detail-modal {
+  display: none;
+  background: #fff;
+  width: 100%;
+  padding: 5%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modal-wrapper .task-detail-modal .task-detail-header {
+  margin-bottom: 10px;
+}
+
+.modal-wrapper .task-detail-modal .task-detail-body {
+  padding: 20px 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.modal-wrapper .task-detail-modal .task-detail-body .task-content .task-content-heading .task-content-heading-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.modal-wrapper .task-detail-modal .task-detail-body .task-content .task-content-heading .task-content-heading-top .task-due-date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal-wrapper .task-detail-modal .task-detail-body .task-content .task-content-heading .task-content-heading-top .task-due-date p {
+  margin-right: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  font-family: var(--LatoBlack);
+  float: left;
+  background: var(--secondary-color);
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+.modal-wrapper .task-detail-modal .task-detail-body .task-content .task-content-heading .task-content-heading-top .task-due-date p span {
+  text-transform: none;
+  font-size: 14px;
+  font-family: var(--Lato);
+}
+
+.modal-wrapper .task-detail-modal .task-detail-body .task-content .task-content-heading .task-content-heading-top .task-due-date i {
+  line-height: 14px;
+}
+
+.modal-wrapper .task-detail-modal .task-detail-body .task-content .task-content-heading .task-content-heading-top .task-content-meta {
+  float: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal-wrapper .task-detail-modal .task-detail-body .task-content .task-content-heading .task-content-heading-top .task-content-meta select {
+  padding: 10px;
+  float: left;
+}
+
+.modal-wrapper .task-detail-modal .task-detail-body .task-content .task-content-heading .task-content-heading-top .task-content-meta a {
+  margin-left: 10px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.modal-wrapper .task-detail-modal .task-detail-body .task-content .task-content-heading .task-content-heading-top .task-content-meta a:hover {
+  background: var(--secondary-color);
+}
+
+.modal-wrapper .task-detail-modal .task-detail-body .task-content .task-content-heading h3 {
+  font-family: var(--LatoBlack);
+  font-size: 20px;
+}
+
+.modal-wrapper .task-detail-modal .task-detail-body .task-content .task-content-heading small {
+  float: right;
+}
+
+.modal-wrapper .task-detail-modal .task-detail-body .task-content .task-content-body {
+  margin-top: 10px;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+}
+
+.modal-wrapper .task-detail-modal .task-detail-body .task-content .task-content-body .task-content-body-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal-wrapper .task-detail-modal .task-detail-body .task-content .task-content-body .task-content-body-title h3, .modal-wrapper .task-detail-modal .task-detail-body .task-content .task-content-body .task-content-body-title a {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.modal-wrapper .task-detail-modal .task-detail-body .task-content .task-content-body .task-content-body-title h3 {
+  font-family: var(--LatoBlack);
+}
+
+.modal-wrapper .task-detail-modal .task-detail-body .task-content .task-content-body .task-content-body-title a {
+  font-size: 18px;
+  padding: 3px 6px;
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.modal-wrapper .task-detail-modal .task-detail-body .task-content .task-content-body .task-content-body-title a:hover {
+  background: var(--secondary-color);
+}
+
+.modal-wrapper .task-detail-modal .task-detail-body .task-content .task-content-body .task-content-body-text p {
+  font-size: 18px;
+  width: 100%;
+}
+
+.modal-wrapper .task-detail-modal .task-detail-body .task-content .task-content-btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+  float: left;
+}
+
+.modal-wrapper .task-detail-modal .task-detail-body .task-content .task-content-btn.modal-close {
+  background: #fff;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  cursor: pointer;
+  float: right;
+  margin-right: 10px;
+}
+
+.modal-wrapper .task-detail-modal .task-detail-body .task-content .task-content-btn.modal-close:hover {
+  background: var(--default-color);
+}
+
+.modal-wrapper .task-detail-modal .task-detail-body .task-content .mark-complete {
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+  float: right;
+}
+
+.task-link {
+  cursor: pointer;
+}
+
+@-webkit-keyframes NewTaskModal {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes NewTaskModal {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.account {
+  width: 60%;
+  margin: 0 20%;
+  position: relative;
+  height: 100%;
+  padding: 8% 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.account .account-form-container {
+  float: left;
+  padding: 10% 5%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid var(--primary-color);
+}
+
+.account .account-form-container .account-form.sign-up {
+  display: none;
+}
+
+.account .account-form-container .account-form .account-form-header {
+  float: left;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.account .account-form-container .account-form .account-form-header h3 {
+  font-family: LatoBlack;
+}
+
+.account .account-form-container .account-form .account-form-header h3, .account .account-form-container .account-form .account-form-header small {
+  margin-top: 5px;
+}
+
+.account .account-form-container .account-form .account-form-footer {
+  margin-top: 10px;
+}
+
+.account .account-form-container .account-form .account-form-footer small {
+  text-align: center;
+  float: left;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.account .account-form-container .account-form .account-form-body .form-item {
+  background-color: #f3f1ef;
+}
+
+.account .account-form-container .account-form .account-form-body .form-item:focus {
+  border: 1px solid var(--primary-color);
+}
+/*# sourceMappingURL=style.css.map */
