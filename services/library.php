@@ -5,28 +5,20 @@ class Library{
     use Validator;
 
     public function __construct(){
-        $this->getAction();
+        ///empty
     }
- 
-    public proccessFormValues($formValues){
+    
+    public function processFormValues($formValues){
         $password = $formValues->password;
-
-        $status[];
-        $i;
+        $status = [];
+        $i = 0;
 
         foreach ($formValues as $key => $value) {
-            $validated =  Validator->check($key, $value, $password);
+            $validated =  Validator::check($key, $value, $password);
             $validated = $status[$i];    
             $i++;
         }
 
-        if () {
-            
-        }
-
-
-
     }
-
 
 }

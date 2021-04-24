@@ -8,8 +8,9 @@ class App extends Library{
     use Connection;
 
     public function __construct(){   
-        $this->dbConnection(); 
-        $this->getAction();       
+        Connection::dbConnection(); 
+        $this->getAction();
+        // parent::__construct();       
     }
 
     protected function getAction(){
@@ -21,7 +22,7 @@ class App extends Library{
     }
 
     function register(){
-        $this->proccessFormValues($_POST);
+        $this->processFormValues($_POST);
 
     }
 

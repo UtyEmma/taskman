@@ -6,7 +6,7 @@ trait Validator {
     Use Rules;
 
     // Check for empty values, if empty return the result
-    public check($key, $value, $password = ''){
+    public function check($key, $value, $password = ''){
         $status = true;
 
         if (!empty($value)) {
@@ -16,7 +16,7 @@ trait Validator {
         return $status;
     }
 
-    protected validateFurther($key, $value, $password){
+    protected function validateFurther($key, $value, $password){
         $status = true;
 
         call_user_func('Rules::'.$key, $value, $password);

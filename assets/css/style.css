@@ -14,16 +14,17 @@
 }
 
 :root {
-  /** Colors **/
+  /**============== Colors ============**/
   --primary-color: #bf9967;
   --secondary-color: rgb(248, 234, 214);
   --default-color: rgb(243, 241, 239);
+  /** ============ Shadow ============**/
   --box-shadow: 1px 1px 2.5px grey;
   /**=========== Fonts ==========**/
   --Lato: Lato;
   --LatoBold: LatoBold;
   --LatoBlack: LatoBlack;
-  /** Transitions **/
+  /**========== Transitions ================**/
   --transition: all 0.5s ease-in-out;
 }
 
