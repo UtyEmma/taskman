@@ -1,29 +1,12 @@
-<?php 
-require './connect.php';
-require './validator.php';
-require './library.php';
+<?php
+require './Database/Connect';
+// require '../Controllers/Co';
 
-class App extends Library{
-
-    use Connection;
-
-    public function __construct(){   
-        Connection::dbConnection(); 
-        $this->getAction();
-        // parent::__construct();       
-    }
-
-    protected function getAction(){
-        if (isset($_GET['action'])) {
-            $value = $_GET['action'];
-            
-            return call_user_func('App::'.$value);
-        }
-    }
+trait Users {
+    use Connect;
 
     function register(){
         $this->processFormValues($_POST);
-
     }
 
     function login(){
@@ -46,8 +29,6 @@ class App extends Library{
             'status' => true,
             'message' => 'Table was created successfully!'
         ]);
-    } 
+    }
 
 }
-
-$obj = new App();

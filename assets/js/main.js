@@ -1,4 +1,3 @@
-
 function toggleNewTaskForm(event){
     event.preventDefault();
 
@@ -61,6 +60,7 @@ function toggleUserAccounts(event, displayed_form, hidden_form) {
     document.querySelector(displayed_form).style.display = 'none';
     document.querySelector(hidden_form).style.display = 'block';
 }
+
 
 async function processForm(event, action){
     event.preventDefault();
