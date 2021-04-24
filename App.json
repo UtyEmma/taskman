@@ -1,0 +1,5 @@
+{
+    "name" : "Taskman",
+    "description" : "Simple Task Management Web Application",
+    "repository" : "https://git.heroku.com/task-manapp.git"
+}
