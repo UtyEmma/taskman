@@ -1,5 +1,10 @@
 <?php
 require './vendor/autoload.php';
-?>
 
-<div>Samuel</div>
+Use Bootstrap\App;
+
+// print('ashashjas');
+$i = 0;
+$app = new App();
+
+return $app->server($i);
