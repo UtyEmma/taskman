@@ -4,7 +4,7 @@ namespace Bootstrap;
 class App {
 
     
-    function server($i){
+    function server(){
         $array = ['/taskman/index.php', "/taskman"."/"];
         
         if(!in_array($_SERVER['REQUEST_URI'], $array )){
@@ -14,32 +14,24 @@ class App {
             $page = [$page_explode[2], $page_explode[3],$page_explode[4]];
             $url = implode('/', $page);
     
-            if($i === 0){
-                require $url;
-                $i=1;
-            }
+            require $url;
             return;
         }
+        
         require 'src/views/index.html';
     }
 
     public function loadPage(){
-         
-         $host = $_SERVER['SERVER_NAME'];
-    
-         $method = $_SERVER['REQUEST_METHOD'];
+        $method = $_SERVER['REQUEST_METHOD'];
 
-        $method === 'GET' ? $status = $this->requirePage() : $status =  $this->error();
+        $method === 'GET' ? $status = $this->getPage() : $status =  $this->error();
 
         return $status;
     }
 
-    protected function requirePage(){
+    protected function getPage(){
         $baseUrl = $_SERVER['REQUEST_URI'];
-
-        $dir = $baseUrl;
-
-        return $dir;
+        return $baseUrl;
     }
 
     protected function error(){
