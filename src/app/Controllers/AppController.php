@@ -4,10 +4,10 @@ namespace App\Controllers;
 class AppController {
 
     static function index (){
-        return 'asjajs';
+        return 'src/views/index.html';
     }
 
     static function dashboard (){
-        return 'rrer';
+        return 'src/views/dashboard.html';
     }
 }

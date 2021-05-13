@@ -1,6 +1,6 @@
 <?php
 use App\Controllers\AppController;
-use App\Controllers\UserController; 
+use App\Controllers\UserController;
 
 $routes = [
         'get' => [

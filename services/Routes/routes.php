@@ -1,7 +1,10 @@
 <?php
 namespace Services\Routes;
 
-use App\Controllers\AppController;
+require 'routes/route.php';
+
+global $new;
+$new = $routes;
 
 class Routes { 
 
@@ -9,10 +12,10 @@ class Routes {
 
     public function __construct()
     {
-        // $this->route = $route;
+        $this->route = $GLOBALS['new'];
     }    
 
-    public function make($route){
-        print_r($route);
+    public function make(){
+        return $this->route;
     }
 }
