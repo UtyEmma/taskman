@@ -1,8 +1,10 @@
 <?php
 namespace Services\Requests;
 
-// include 'routes/route.php';
+use Exception;
 use Services\Requests\Client;
+
+require './routes/route.php';
 
 class Requests extends Client{
 
@@ -12,37 +14,37 @@ class Requests extends Client{
     function __construct(){
         $this->method = new Client();
         $this->path = new Client();
-        $this->make();
+        // $this->make();
     }
 
-    private function make(){   
-        switch (strtolower($this->method())) {
-            case 'get':
-                $this->get();
-                break;
-            case 'post':
-                $this->post();
-                break;
-            default:
-                # code...
-                break;
-        }
-    }
+    // private function make(){   
+    //     switch (strtolower($this->method())) {
+    //         case 'get':
+    //             // $this->get();
+    //             break;
+    //         case 'post':
+    //             // $this->post();
+    //             break;
+    //         default:
+    //             throw new Exception("Method does not exist", 500);                
+    //             break;
+    //     }
+    // }
 
-    private function get(){
-        foreach ($this->getRoutes as $key => $value) {
-            if ($key === $this->url) {
+    // private function get(){
+    //     foreach ($this->routes as $key => $value) {
+    //         if ($key === $this->url) {
                 
-            }
-        }
-    }
+    //         }
+    //     }
+    // }
 
-    private function post(){
-        foreach ($this->getRoutes as $key => $value) {
-            if ($key === $this->url) {
+    // private function post(){
+    //     foreach ($this->getRoutes as $key => $value) {
+    //         if ($key === $this->url) {
                 
-            }
-        }
-    }
+    //         }
+    //     }
+    // }
 
 }

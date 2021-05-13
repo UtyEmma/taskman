@@ -4,10 +4,10 @@ namespace App\Controllers;
 class AppController {
 
     static function index (){
-        require('src/views/account.html');
+        return 'asjajs';
     }
 
     static function dashboard (){
-        require('src/views/dashboard.html');
+        return 'rrer';
     }
 }
