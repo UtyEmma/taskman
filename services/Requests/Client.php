@@ -1,11 +1,9 @@
 <?php 
 namespace Services\Requests;
 
-use Exception;
-
 class Client {
 
-    static function method(){
+    public function method(){
         return $_SERVER['REQUEST_METHOD'];
     }
 
@@ -13,6 +11,8 @@ class Client {
         return $_SERVER['REQUEST_URI'];
     }
 
-    // static function 
+    static function url(){
+        return $_SERVER[''];
+    }
 
 }
