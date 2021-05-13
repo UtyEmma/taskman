@@ -22,7 +22,7 @@ class Requests extends Client{
                 $this->get($this->routes['get']);
                 break;
             case 'post':
-                $this->post();
+                $this->post($this->routes['post']);
                 break;
             default:
                 print_r("Invalid Request Method");
@@ -43,11 +43,18 @@ class Requests extends Client{
         }
     }
 
-    private function post(){
-        foreach ($this->getRoutes as $key => $value) {
-            if ($key === $this->url()) {
-                
+    private function post($routes){
+        try {
+            foreach ($routes as $key => $value) {
+                if ($key === $this->url()) {
+                    // return require $value;
+                    print_r($value);
+                    return;
+                }
             }
+            throw new Exception('Route"'.$this->url().'" does not exist');
+        } catch (\Exception $e) {
+            print_r($e->getMessage());
         }
     }
 

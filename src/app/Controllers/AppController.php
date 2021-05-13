@@ -10,4 +10,8 @@ class AppController {
     static function dashboard (){
         return 'src/views/dashboard.html';
     }
+
+    static function account (){
+        return 'src/views/account.html';
+    }
 }
