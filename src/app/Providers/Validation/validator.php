@@ -1,26 +1,55 @@
 <?php 
 require './rules.php';
+require './messages.php';
 
 trait Validator {
 
     Use Rules;
+    
+    /**
+     * make
+     *
+     * @param  mixed $formValues
+     * @return void
+     */    
 
-    // Check for empty values, if empty return the result
-    public function check($key, $value, $password = ''){
-        $status = true;
-
-        if (!empty($value)) {
-            $this->validateFurther($key, $value, $password);
+    public function make($formValues){
+        $i = 0;
+        $status = [];
+        foreach ($formValues as $key => $value) {
+            $validated =  $this->check($key, $value);
+            $validated = $status[$i];    
+            $i++;
         }
 
         return $status;
     }
 
-    protected function validateFurther($key, $value, $password){
+    
+    /**
+     * check
+     *
+     * @param  mixed $key
+     * @param  mixed $value
+     * @return void
+     */
+    public function check($key, $value){
         $status = true;
 
-        call_user_func('Rules::'.$key, $value, $password);
+        if (!empty($value)) {
+          $validate = $this->validateFurther($key, $value);
+        }else{
+            $validate = ['status' => false, 'message' = Messgae->empty($Key)];
+        }
 
+        return ['name' => $key, 'result' => $validate];
+
+        return $status;
+    }
+
+    protected function validateFurther($key, $value){
+        $status = true;
+        return call_user_func('Rules::'.$key, $value);
     }
 
 }

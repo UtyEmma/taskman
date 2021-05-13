@@ -1,11 +1,17 @@
 <?php
 
 class Form {
+
     protected function getAction(){
-        if (isset($_GET['action'])) {
+        try {
+            if(!isset($_GET['action'])){
+                throw new Exception("Form Action Is Not Specified!");
+            }
             $value = $_GET['action'];
-            
             return call_user_func('App::'.$value);
+
+        } catch (Exception $th) {
+            return $th->getMessage();
         }
     }
 
@@ -14,10 +20,6 @@ class Form {
         $status = [];
         $i = 0;
         
-        foreach ($formValues as $key => $value) {
-            $validated =  Validator::check($key, $value, $password);
-            $validated = $status[$i];    
-            $i++;
-        }
+        
     }
 }

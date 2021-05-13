@@ -4,16 +4,16 @@ trait Rules {
 
     function empty ($value){
         if (empty($value) || $value === '' || $value = null) {
-            return $this->message('error','This field is required');
+            return $this->message(false,'This field is required');
         }
 
-        return $this->message('success');
+        return $this->message(true);
     }
 
     function email_address($value){
         !filter_var($value, FILTER_VALIDATE_EMAIL)
-            ? $message = $this->message('error', 'Email Address is invalid')
-                :  $message = $this->message('success');
+            ? $message = $this->message(false, 'Email Address is invalid')
+                :  $message = $this->message(true);
 
         return $message;
     }
@@ -22,16 +22,8 @@ trait Rules {
         $regEx = '#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#';
 
         !preg_match($regEx, $value) 
-            ? $message = $this->message('error', 'Password is not strong enough')
-                : $message = $this->message('success');
-
-        return $message;
-    }
-
-    function confirm_password($value, $password){
-        $value !== $password
-            ? $message = $this->message('error', 'Your Passwords must be similar')
-                : $message = $this->message('success');
+            ? $message = $this->message(false, 'Password is not strong enough')
+                : $message = $this->message(true);
 
         return $message;
     }
