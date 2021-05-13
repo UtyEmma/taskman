@@ -1,14 +1,13 @@
 <?php
 namespace Services\Requests;
 
+use Routes\Routes;
+use Services\Requests\Client;
+
 class Requests {
 
-    public function method(){
-        return $_SERVER['REQUEST_METHOD'];
-    }
-
-    public function path(){
-        
+    static function make (){
+            
     }
 
 }

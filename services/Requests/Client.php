@@ -4,14 +4,15 @@ namespace Services\Requests;
 use Exception;
 
 class Client {
-    var $request;
 
-    public function get(){
-        // return $this->request('get');
+    static function method(){
+        return $_SERVER['REQUEST_METHOD'];
     }
 
-    public function post(){
-        // return $this->request('post');
+    static function path(){
+        return $_SERVER['REQUEST_URI'];
     }
+
+    // static function 
 
 }

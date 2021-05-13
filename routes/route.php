@@ -1,15 +1,16 @@
 <?php
+namespace Routes;
 
 use App\Controllers\AppController;
 use App\Controllers\UserController;
 
-$route = [
-    'get' => [
+class Routes {
+    static $get = [
         '/' => AppController::index(),
         '/dashboard' => AppController::dashboard()
-    ],
+    ];
 
-    'post' => [
+    static $post = [
         '/register' => UserController::register()
-    ]
-];
+    ];
+}

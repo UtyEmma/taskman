@@ -9,7 +9,6 @@ class Controller {
 
     public function __construct(){   
         $this->connect = new Connect();
-
         $this->connect->dbConnection();       
     }
 
