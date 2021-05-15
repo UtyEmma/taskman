@@ -75,7 +75,7 @@ async function processForm(event, action){
 
     if (validateRequest === true) {
         let formData = new FormData(currentForm);
-        let response = await Request.post(formData, 'taskman/register');
+        let response = await Request.post(formData, `taskman/${action}`);
         console.log(response)
     }
 

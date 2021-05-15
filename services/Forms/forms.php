@@ -1,25 +1,11 @@
 <?php
+namespace Services\Forms;
 
-class Form {
+class Forms{
 
-    protected function getAction(){
-        try {
-            if(!isset($_GET['action'])){
-                throw new Exception("Form Action Is Not Specified!");
-            }
-            $value = $_GET['action'];
-            return call_user_func('App::'.$value);
-
-        } catch (Exception $th) {
-            return $th->getMessage();
-        }
+    static function all(){
+        $request = json_decode(json_encode($_REQUEST));
+        return $request;
     }
-
-    public function purge($formValues){
-        $password = $formValues->password;
-        $status = [];
-        $i = 0;
-        
-        
-    }
+    
 }

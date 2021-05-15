@@ -32,30 +32,24 @@ class Requests extends Client{
 
     private function get($routes){
         try {
-            foreach ($routes as $key => $value) {
+            foreach ($routes as $key => $value){
                 if ($key === $this->url()) {
                     return require $value;
                 }
             }
             throw new Exception('Route"'.$this->url().'" does not exist');
-        } catch (\Exception $e) {
-            print_r($e->getMessage());
+        } catch (\Exception $e){
+            return $e->getMessage();
         }
     }
 
     private function post($routes){
-        try {
-            foreach ($routes as $key => $value) {
-                if ($key === $this->url()) {
-                    // return require $value;
-                    print_r($value);
-                    return;
-                }
+        foreach ($routes as $key => $value) {
+            if ($key === $this->url()){
+                return $value;
             }
-            throw new Exception('Route"'.$this->url().'" does not exist');
-        } catch (\Exception $e) {
-            print_r($e->getMessage());
         }
+        return print_r('Route"'.$this->url().'" does not exist');
     }
 
 }

@@ -3,7 +3,7 @@ import Styles from './styles.js'
 const Messages = {
 
     'messages' : {
-        'email-address' : 'Invalid Email Address',
+        'email' : 'Invalid Email Address',
         'empty' : 'This field is required',
         'password' : 'Password is not strong enough',
         'confirm_password' : 'Passwords Must Match'

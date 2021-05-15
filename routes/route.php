@@ -10,6 +10,7 @@ $routes = [
         ],
 
         'post' => [
-            '/register' => UserController::register()
+            '/register' => UserController::register(),
+            '/login' => UserController::login()
         ]
     ];
