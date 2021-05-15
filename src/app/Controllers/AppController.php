@@ -1,17 +1,28 @@
 <?php
 namespace App\Controllers;
 
+use Services\Response\Response;
+
 class AppController {
 
     static function index (){
-        return 'src/views/index.html';
+        return Response::view('index', [
+            'title' => 'Kanu',
+            'brand' => 'snap'
+        ]);
     }
 
     static function dashboard (){
-        return 'src/views/dashboard.html';
+        return Response::view('dashboard', [
+            'title' => 'Dashboard',
+            'brand' => 'Taskman'
+        ]);
     }
 
     static function account (){
-        return 'src/views/account.html';
+        return Response::view('account', [
+            'title' => 'Samuel',
+            'brand' => 'Pages'
+        ]);
     }
 }

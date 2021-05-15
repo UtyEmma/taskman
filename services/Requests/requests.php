@@ -31,16 +31,17 @@ class Requests extends Client{
     }
 
     private function get($routes){
-        try {
-            foreach ($routes as $key => $value){
-                if ($key === $this->url()) {
-                    return require $value;
-                }
+        $i =0;
+        foreach ($routes as $key => $value){
+            if ($key === $this->url()) {
+                return $this->loadRouteFunction($value);
             }
-            throw new Exception('Route"'.$this->url().'" does not exist');
-        } catch (\Exception $e){
-            return $e->getMessage();
+            $i++;
         }
+    }
+
+    private function loadRouteFunction($func){
+        return call_user_func($func[0].'::'.$func[1]);
     }
 
     private function post($routes){

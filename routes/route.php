@@ -4,13 +4,13 @@ use App\Controllers\UserController;
 
 $routes = [
         'get' => [
-            '/' => AppController::index(),
-            '/dashboard' => AppController::dashboard(),
-            '/account' => AppController::account()
+            '/' => [AppController::class, 'index'],
+            '/dashboard' => [AppController::class ,'dashboard'],
+            '/account' => [AppController::class, 'account']
         ],
 
         'post' => [
-            '/register' => UserController::register(),
-            '/login' => UserController::login()
+            '/register' => [UserController::class, 'register'],
+            '/login' => [UserController::class, 'login']
         ]
     ];
