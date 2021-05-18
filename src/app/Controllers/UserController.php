@@ -17,8 +17,6 @@ class UserController extends Controller {
 
     static function register(){
         $request = Forms::all();
-        $data = [];
-
         if ($request) {
             $password = hash('SHA256', $request->password);  
             $create_user = Resources::create('users', [
