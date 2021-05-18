@@ -1,5 +1,6 @@
 const Request = {
-    'post' : async (formData, url) => {
+    'post' : async (data, url) => {
+        formData = new FormData(data)
         let response = await fetch(url, {
             method: 'POST',
             body: formData
@@ -12,7 +13,7 @@ const Request = {
     
     },
 
-    'get' : async (formData, url) => {
+    'get' : async (url) => {
         let response = await fetch(url, {
             method: 'GET'
         });

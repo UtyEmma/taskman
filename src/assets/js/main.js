@@ -60,8 +60,10 @@ function modalHandler (action, content, modal_wrapper){
 }
 
 // Switch User Account
-function toggleUserAccounts(event, displayed_form, hidden_form) {
-    event.preventDefault();
+function toggleUserAccounts(event, displayed_form, hidden_form) {    
+    if (event) {
+        event.preventDefault();   
+    }   
     document.querySelector(displayed_form).style.display = 'none';
     document.querySelector(hidden_form).style.display = 'block';
 }
@@ -71,14 +73,40 @@ async function processForm(event, action){
     event.preventDefault();
 
     let validateRequest = validate.check(event);
-    let currentForm = event.target;
+    let data = event.target;
+    let response = '';
+    if (validateRequest) {
+        response = await Request.post(data, `${action}`);
+    }
+    return response;
+}
 
-    if (validateRequest === true) {
-        let formData = new FormData(currentForm);
-        let response = await Request.post(formData, `taskman/${action}`);
-        console.log(response)
+async function login(event){
+    let response = await processForm(event, 'login');
+    response.status 
+    ?  window.location.href = 'dashboard' 
+        : this.display(response.message, `#login`, response.status);
+}
+
+async function register(event){
+    let response = await processForm(event, 'register');
+    return registered(response);
+}
+
+function registered(response){
+    if (response.status) {
+        this.toggleUserAccounts('', '.sign-up', '.login');
+        this.display(response.message, `#login`, response.status); 
+        document.querySelector('#login-email-address').value = response.data.email;   
     }
 
+    this.display(response.message, `#register`, response.status)
+}
+
+function display (message, selector, status){
+    status ? color = 'green' : color = 'red';
+    document.querySelector(selector).style.color = color;
+    document.querySelector(selector).innerHTML = message;
 }
 
 function onDragStart(e){

@@ -15,7 +15,7 @@ class AppController {
 
     static function dashboard (){
         return Response::view('dashboard', [
-            'title' => 'Samuel',
+            'title' => 'Dashboard',
             'brand' => 'Taskman'
         ]);
     }

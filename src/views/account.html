@@ -36,7 +36,8 @@
                             </div>
 
                             <div class="account-form-body">
-                                <form onsubmit="processForm(event, 'login')">
+                                <small id="login"></small>
+                                <form onsubmit="login(event)">
                                     <div class="form-email form-item-container">
                                         <input id="login-email-address" name='email' class="account-form-item form-item" type="text" placeholder="Email Address">
                                         <label for="login-email-address"></label>
@@ -62,7 +63,8 @@
                             </div>
 
                             <div class="account-form-body">
-                                <form onsubmit="processForm(event, 'register')">
+                                <small id="register"></small>
+                                <form onsubmit="register(event)">
                                     <div class="form-email form-item-container">
                                         <input id="email-address" name="email"  class="account-form-item form-item" type="text" placeholder="Email Address">
                                         <label for="email-address"></label>

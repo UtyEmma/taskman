@@ -25,7 +25,11 @@ class UserController extends Controller {
                 'email' => $request->email,
                 'password' => $password
             ]);
-            return Response::json($create_user);
+            return Response::json([
+                'status' => true,
+                'data' => $create_user,
+                'message' => "Registration Successful"
+            ]);
         }
         
     }
@@ -37,7 +41,7 @@ class UserController extends Controller {
             'email' => $request->email,
             'password' => $password
             ]);       
-                 
+
         if (!$getUsers) {
             return Response::json([
                 'status' => false,
@@ -45,7 +49,9 @@ class UserController extends Controller {
                 ]);
         }
 
-        return Response::json($getUsers);
+        return Response::json([
+            'status' => true
+        ]);
     }
 }
 
