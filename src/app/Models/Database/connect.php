@@ -16,9 +16,23 @@ class Connect {
         if (self::$db_connection) {
             return self::$db_connection;
         }else{
-            die(mysqli_connect_error());
+            return mysqli_connect_error();
         }
 
-    } 
+    }
+    
+    static function sqlHandler($query){
+        if($results = mysqli_query(self::dbConnection(), $query)){
+            if (mysqli_num_rows($results) > 0) {
+                $result = mysqli_fetch_assoc($results);
+            }else{
+                $result = null;
+            }
+        }else{
+            return mysqli_error(self::dbConnection());
+        }
+
+        return $result;
+    }
 
 }

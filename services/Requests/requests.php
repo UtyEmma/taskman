@@ -47,7 +47,7 @@ class Requests extends Client{
     private function post($routes){
         foreach ($routes as $key => $value) {
             if ($key === $this->url()){
-                return $value;
+                return $this->loadRouteFunction($value);
             }
         }
         return print_r('Route"'.$this->url().'" does not exist');

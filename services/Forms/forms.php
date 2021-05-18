@@ -7,5 +7,7 @@ class Forms{
         $request = json_decode(json_encode($_REQUEST));
         return $request;
     }
+
+    
     
 }

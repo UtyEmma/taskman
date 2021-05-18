@@ -5,6 +5,7 @@ use App\Controllers\Controller;
 use App\Models\Database\Connect;
 use App\Models\Database\Resources;
 use Services\Forms\Forms;
+use Services\Response\Response;
 
 class UserController extends Controller {
 
@@ -17,23 +18,34 @@ class UserController extends Controller {
     static function register(){
         $request = Forms::all();
         $data = [];
+
         if ($request) {
-            $password = hash('SHA256', $request->password);
-            $data = [
+            $password = hash('SHA256', $request->password);  
+            $create_user = Resources::create('users', [
                 'email' => $request->email,
                 'password' => $password
-            ];   
-        
-            $create_user = Resources::create('users', $data);
-            
-            echo json_encode($create_user);
+            ]);
+            return Response::json($create_user);
         }
         
     }
 
     static function login(){
         $request = Forms::all();
-        return Resources::create('users', $request);
+        $password = hash('SHA256', $request->password);
+        $getUsers = Resources::where('users', [
+            'email' => $request->email,
+            'password' => $password
+            ]);       
+                 
+        if (!$getUsers) {
+            return Response::json([
+                'status' => false,
+                'message' => "Incorrect Username or Password"
+                ]);
+        }
+
+        return Response::json($getUsers);
     }
 }
 

@@ -6,6 +6,7 @@ use Services\Response\Response;
 class AppController {
 
     static function index (){
+        
         return Response::view('index', [
             'title' => 'Kanu',
             'brand' => 'snap'
@@ -14,7 +15,7 @@ class AppController {
 
     static function dashboard (){
         return Response::view('dashboard', [
-            'title' => 'Dashboard',
+            'title' => 'Samuel',
             'brand' => 'Taskman'
         ]);
     }

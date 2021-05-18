@@ -502,6 +502,30 @@ button {
   cursor: default;
 }
 
+.tasks .tasks-tables .tasks-table .tasks-table-body .completedTask {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: rgba(44, 44, 44, 0.844);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 2px dashed rgba(44, 44, 44, 0.844);
+  padding: 10px 0;
+}
+
+.tasks .tasks-tables .tasks-table .tasks-table-body .completedTask p {
+  font-weight: 600;
+  font-size: 12px;
+}
+
 .tasks .tasks-tables .tasks-table.tasks-table-pending {
   width: 57%;
   margin-right: 3%;

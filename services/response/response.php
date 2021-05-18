@@ -19,9 +19,7 @@ class Response {
     static function getFileContents($page, $data){
         $cachedFile = self::$cache.'/'.$page.'.php';
         $contents = file_get_contents('src/views/'.$page.'.html');
-        
         $content = self::compileCode($contents, $data);
-
         file_put_contents($cachedFile, $content);
         require ($cachedFile);
     }
@@ -69,6 +67,10 @@ class Response {
 
     static function replaceVariables($code, $key, $value){
         return preg_replace('/{{'.$key.'}}/', $value, $code);
+    }
+
+    static function json($value){
+        return print_r(json_encode($value));
     }
 
 

@@ -105,7 +105,7 @@
         <div class='container'>
 
             <nav class='nav'>
-                <div class='nav-brand'> {{brand}} </div>
+                <div class='nav-brand'> Taskman </div>
 
                 <div class='nav-bar'>
                     <ul class='nav-bar-menu'>
@@ -120,7 +120,7 @@
 
                 <div class="content-dashboard-header">
                     <div class="">
-                        <h1>{{title}}</h1>
+                        <h1>Samuel</h1>
                     </div>
                 </div> 
                 

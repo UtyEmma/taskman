@@ -428,9 +428,22 @@ button{
                                     cursor: default;
                                 }
                             }
-                        }   
+                        }  
                     }
                 }   
+                .completedTask{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: rgba(44, 44, 44, 0.844);
+                    flex-direction: column;
+                    border: 2px dashed rgba(44, 44, 44, 0.844);
+                    padding: 10px 0;
+                    p{
+                        font-weight: 600;
+                        font-size: 12px;
+                    }
+                }
             }
             &.tasks-table-pending{
                 width: 57%;
@@ -888,4 +901,6 @@ button{
             
     }  
 }
+
+
     
