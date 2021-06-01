@@ -9,7 +9,7 @@ class Session {
         return true;
     }
 
-    static function get ($name){
+    static function get($name){
         isset($_SESSION[$name]) ? $res = $_SESSION[$name] : $res = false;
         return $res;
     }

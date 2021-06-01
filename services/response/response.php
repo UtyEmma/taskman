@@ -16,6 +16,12 @@ class Response {
         }
     }
 
+    static function redirect(string $page, array $data = []){
+        Client::url() != '/' ? $url = str_replace('/', '', Client::url()) : $url = $page;
+        header('location: '.$page);
+        self::getFileContents($page, $data);
+    }
+
     static function getFileContents($page, $data){
         $cachedFile = self::$cache.'/'.$page.'.php';
         $contents = file_get_contents('src/views/'.$page.'.html');

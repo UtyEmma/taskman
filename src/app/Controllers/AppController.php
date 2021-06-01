@@ -1,6 +1,5 @@
 <?php
 namespace App\Controllers;
-session_start();
 
 use Services\Auth\Auth;
 use Services\Response\Response;
@@ -19,8 +18,7 @@ class AppController {
         
         return Response::view('dashboard', [
             'title' => 'ajjaj',
-            'brand' => 'Taskman',
-            'email' => $user->email
+            'brand' => 'Taskman'
         ]);
     }
 

@@ -1,5 +1,4 @@
 <?php
-
 namespace Services\Auth;
 
 use App\Models\Database\Resources;
@@ -7,11 +6,6 @@ use Services\Sessions\Session;
 
 class Auth{
 
-  // decrypt the string
-  public function decryptString($string, $salt)
-  {
-    return ;
-  }
     static function user ($table, $data){
 
         $user_exists = Resources::where($table, $data);
@@ -24,10 +18,11 @@ class Auth{
     }
 
     static function getUser(){
-        return json_decode(base64_decode($_SESSION['user']));
+        if (!$user = Session::get('user')){
+            return false;
+        }
+        return $user;
     }
-
-    // static function 
 
     static function logout(){
         unset($_SESSION['user']);

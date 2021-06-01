@@ -14,3 +14,8 @@ $routes = [
             '/login' => [UserController::class, 'login']
         ]
     ];
+
+
+$middlewares = [
+    'user' => ['dashboard']
+];

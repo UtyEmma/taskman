@@ -2,6 +2,7 @@
 namespace Services\Requests;
 
 use Exception;
+use Services\Middleware\Middleware;
 use Services\Requests\Client;
 use Services\Routes\Routes;
 
@@ -34,6 +35,9 @@ class Requests extends Client{
         $i =0;
         foreach ($routes as $key => $value){
             if ($key === $this->url()) {
+                if(isset($value[2])){
+                    Middleware::check($value[2]);
+                }
                 return $this->loadRouteFunction($value);
             }
             $i++;
