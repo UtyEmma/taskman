@@ -5,8 +5,8 @@ use App\Controllers\UserController;
 $routes = [
         'get' => [
             '/' => [AppController::class, 'index'],
-            '/dashboard' => [AppController::class ,'dashboard'],
-            '/account' => [AppController::class, 'account']
+            '/account' => [AppController::class, 'account'],
+            '/dashboard' => [AppController::class ,'dashboard', 'user']
         ],
 
         'post' => [

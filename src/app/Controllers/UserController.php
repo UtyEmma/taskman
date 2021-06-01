@@ -4,16 +4,12 @@ namespace App\Controllers;
 use App\Controllers\Controller;
 use App\Models\Database\Connect;
 use App\Models\Database\Resources;
+use Services\Auth\Auth;
 use Services\Forms\Forms;
 use Services\Response\Response;
+use Services\Session\Session;
 
 class UserController extends Controller {
-
-    static $conn;
-
-    public function __construct(){
-        self::$conn = Connect::$db_connection;
-    }
 
     static function register(){
         $request = Forms::all();
@@ -23,6 +19,7 @@ class UserController extends Controller {
                 'email' => $request->email,
                 'password' => $password
             ]);
+            
             return Response::json([
                 'status' => true,
                 'data' => $create_user,
@@ -35,10 +32,11 @@ class UserController extends Controller {
     static function login(){
         $request = Forms::all();
         $password = hash('SHA256', $request->password);
-        $getUsers = Resources::where('users', [
+        
+        $getUsers = Auth::user('users', [
             'email' => $request->email,
             'password' => $password
-            ]);       
+            ]);
 
         if (!$getUsers) {
             return Response::json([
