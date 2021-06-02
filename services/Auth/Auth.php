@@ -25,7 +25,7 @@ class Auth{
     }
 
     static function logout(){
-        unset($_SESSION['user']);
+        Session::destroy('user');
         return true;
     }
 

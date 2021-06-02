@@ -68,29 +68,21 @@ function toggleUserAccounts(event, displayed_form, hidden_form) {
     document.querySelector(hidden_form).style.display = 'block';
 }
 
-
-async function processForm(event, action){
-    event.preventDefault();
-
-    let validateRequest = validate.check(event);
-    let data = event.target;
-    let response = '';
-    if (validateRequest) {
-        response = await Request.post(data, `${action}`);
-    }
-    return response;
-}
-
 async function login(event){
-    let response = await processForm(event, 'login');
+    let response = await Form.process(event, 'login');
     response.status 
     ?  window.location.href = 'dashboard' 
         : this.display(response.message, `#login`, response.status);
 }
 
 async function register(event){
-    let response = await processForm(event, 'register');
+    let response = await Form.process(event, 'register');
     return registered(response);
+}
+
+async function createTask(event){
+    let response = await Form.process(event, 'create_task');
+    return taskCreated(response);
 }
 
 function registered(response){
@@ -100,7 +92,7 @@ function registered(response){
         document.querySelector('#login-email-address').value = response.data.email;   
     }
 
-    this.display(response.message, `#register`, response.status)
+    this.display(response.message, `#register`, response.status);
 }
 
 function display (message, selector, status){

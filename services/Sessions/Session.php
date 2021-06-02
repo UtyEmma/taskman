@@ -14,5 +14,9 @@ class Session {
         return $res;
     }
 
+    static function destroy($name){
+        unset($_SESSION[$name]);
+    }
+
 
 }

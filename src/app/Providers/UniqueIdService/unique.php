@@ -3,8 +3,8 @@
 class Id {
 
     function generate(){
-        $rand = rand(100, 999);
         
+       $id = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 10);
     }
 
 }

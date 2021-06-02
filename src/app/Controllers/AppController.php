@@ -1,10 +1,11 @@
 <?php
 namespace App\Controllers;
 
+use App\Controllers\Controller;
 use Services\Auth\Auth;
 use Services\Response\Response;
 
-class AppController {
+class AppController extends Controller{
 
     static function index (){
         return Response::view('index', [
